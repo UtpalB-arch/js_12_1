@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script>
+            // Setup
+var collection = {
+  2548: {
+    albumTitle: 'Slippery When Wet',
+    artist: 'Bon Jovi',
+    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+  },
+  2468: {
+    albumTitle: '1999',
+    artist: 'Prince',
+    tracks: ['1999', 'Little Red Corvette']
+  },
+  1245: {
+    artist: 'Robert Palmer',
+    tracks: []
+  },
+  5439: {
+    albumTitle: 'ABBA Gold'
+  }
+};
+
+// Only change code below this line
+function updateRecords(object, id, prop, value) {
+                if(prop != "tracks" && value != ""){
+                    object[id][prop] = value;
+                }
+                else if(prop == "tracks" && object[id].hasOwnProperty("tracks") == false){
+                    object[id][prop] = [value];
+                }
+                else if(prop == "tracks" && value != ""){
+                    object[id][prop].push(value);
+                }
+                else if(value == ""){
+                    delete object[id][prop];
+                }              
+                return object;
+            }
+
+updateRecords(collection, 5439, 'artist', 'ABBA');
+
+
+        </script>
+    </body>
+</html>
